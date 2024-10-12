@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Selector</title>
+    <style>
+        img {
+            margin-top: 20px;
+            max-width: 400px;
+            height: auto;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Select an Animal</h1>
+
+    <!-- Dropdown for selecting an animal -->
+    <select id="animalDropdown" onchange="displayAnimal()">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="elephant">Elephant</option>
+        <option value="lion">Lion</option>
+    </select>
+
+    <!-- Image tag to display selected animal -->
+    <br>
+    <img id="animalImage" src="https://www.akc.org/wp-content/uploads/2017/11/Australian-Shepherd.1.jpg" alt="Animal Image">
+
+    <script>
+        // Function to update the image source based on selected animal
+        function displayAnimal() {
+            // Get the selected animal from the dropdown
+            const selectedAnimal = document.getElementById('animalDropdown').value;
+
+            // Reference to the img element
+            const animalImage = document.getElementById('animalImage');
+
+            // Update the src attribute based on the selected animal
+            if (selectedAnimal === 'dog') {
+                animalImage.src = 'https://www.akc.org/wp-content/uploads/2017/11/Australian-Shepherd.1.jpg';
+                animalImage.alt = 'Dog Image';
+            } else if (selectedAnimal === 'cat') {
+                animalImage.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTztSuwt_8cLqgk0VqG0WivYwYPb4LpuJT9sA&s';
+                animalImage.alt = 'Cat Image';
+            } else if (selectedAnimal === 'elephant') {
+                animalImage.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmtyzDWvAFEDk5F0D91e-55u_oJU72RdO53A&s';
+                animalImage.alt = 'Elephant Image';
+            } else if (selectedAnimal === 'lion') {
+                animalImage.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNk9qaYTJpZ1TpLghPuwAGuQoQHZ0idLONDw&s';
+                animalImage.alt = 'Lion Image';
+            }
+        }
+    </script>
+
+</body>
+</html>
